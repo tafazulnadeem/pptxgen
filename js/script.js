@@ -50,8 +50,12 @@ generatePPT = function() {
 						 "New CiteScore widget popup added.",
 						 "Xabsmetadata SOAP to REST migration."
 						],
-					  "sciencedirectHighlights":[]
-					 }
+					  "sciencedirectHighlights":["sciencedirectHighlight1","sciencedirectHighlight2"],
+					  "enrichedContentHighlights":["EnrichedContentHighlight1","EnrichedContentHighlight2"],
+					  "spfaeHighlights":["spf a&e highlight1"],
+					  "spfcontentHighlights":["spfcontentHighlight1","spfcontentHighlight2"],
+					  "engineeringvillageHighlights":["evhighlight1","evhighlight2"]
+					 };
 	
 	var slide4 = pptx.addNewSlide();
 	slide4.addImage({ path:'./images/line.PNG',w:9.5,x:0.4,y:0.2,h:0.1});
@@ -64,10 +68,35 @@ generatePPT = function() {
 		y1Value = y1Value + 0.25;
 	}
 	slide4.addText('ScienceDirect',   { x:0.4, y:2.5, w:'20%', h:0.38,font_face:'Verdana', font_size:8 ,bold:true, color:'000000', bullet:{code:'2605'} });
+	var y2Value = 2.75;
+	for(var k in Highlights.sciencedirectHighlights){
+		slide4.addText(Highlights.sciencedirectHighlights[k],{x:0.8, y:y2Value,w:'40%',font_face:'Verdana', font_size:8,bullet:true});
+		y2Value = y2Value + 0.25;
+	}
 	slide4.addText('Enriched Content',   { x:0.4, y:3.5, w:'20%', h:0.38,font_face:'Verdana', font_size:8 ,bold:true, color:'000000', bullet:{code:'2605'} });
+	var y3Value = 3.75;
+	for(var k in Highlights.enrichedContentHighlights){
+		slide4.addText(Highlights.enrichedContentHighlights[k],{x:0.8, y:y3Value,w:'40%',font_face:'Verdana', font_size:8,bullet:true});
+		y3Value = y3Value + 0.25;
+	}
 	slide4.addText('SPF A&E',   { x:0.4, y:4.5, w:'20%', h:0.38,font_face:'Verdana', font_size:8 ,bold:true, color:'000000', bullet:{code:'2605'} });
+	var y4Value = 4.75;
+	for(var k in Highlights.spfaeHighlights){
+		slide4.addText(Highlights.spfaeHighlights[k],{x:0.8, y:y4Value,w:'40%',font_face:'Verdana', font_size:8,bullet:true});
+		y4Value = y4Value + 0.25;
+	}
 	slide4.addText('SPF Content',   { x:5.5, y:0.6, w:'20%', h:0.38,font_face:'Verdana', font_size:8 ,bold:true, color:'000000', bullet:{code:'2605'} });
+	var y5Value = 0.85;
+	for(var k in Highlights.spfcontentHighlights){
+		slide4.addText(Highlights.spfcontentHighlights[k],{x:5.9, y:y5Value,w:'40%',font_face:'Verdana', font_size:8,bullet:true});
+		y5Value = y5Value + 0.25;
+	}
 	slide4.addText('Engineering Village',   { x:5.5, y:1.8, w:'20%', h:0.38,font_face:'Verdana', font_size:8 ,bold:true, color:'000000', bullet:{code:'2605'} });
+	var y6Value = 2.05;
+	for(var k in Highlights.engineeringvillageHighlights){
+		slide4.addText(Highlights.engineeringvillageHighlights[k],{x:5.9, y:y6Value,w:'40%',font_face:'Verdana', font_size:8,bullet:true});
+		y6Value = y6Value + 0.25;
+	}
 	slide4.addText("Milestones and Targets", {x:5.5,y:2.8,font_face:'Arial (Headings)',font_size:12,color:'089de3', bold:true, valign : 'm', align :'c', w:'45%',fill:'070719' });
 	var milestoneHeadRow =[
 	{text : 'Milestone', opts: {font_size:8,valign:'m',rowH:0.1, align:'c', bold : true, color:'000000', font_face:'Arial'}},
